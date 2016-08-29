@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='fail_url',
-            field=models.URLField(default='http://example.com/fail-payment/', verbose_name='URL неуспешной оплаты'),
+            field=models.URLField(default='', verbose_name='URL неуспешной оплаты'),
         ),
         migrations.AlterField(
             model_name='payment',
@@ -35,12 +35,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='scid',
-            field=models.PositiveIntegerField(default=123, verbose_name='Номер витрины'),
+            field=models.PositiveIntegerField(default='', verbose_name='Номер витрины'),
         ),
         migrations.AlterField(
             model_name='payment',
             name='shop_id',
-            field=models.PositiveIntegerField(default=456, verbose_name='ID магазина'),
+            field=models.PositiveIntegerField(default='', verbose_name='ID магазина'),
         ),
         migrations.AlterField(
             model_name='payment',
@@ -50,6 +50,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='success_url',
-            field=models.URLField(default='http://example.com/success-payment/', verbose_name='URL успешной оплаты'),
+            field=models.URLField(default='', verbose_name='URL успешной оплаты'),
         ),
     ]
