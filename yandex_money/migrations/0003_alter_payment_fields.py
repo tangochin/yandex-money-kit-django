@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django.conf import settings
 import yandex_money.models
 
 
@@ -20,7 +21,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='fail_url',
-            field=models.URLField(default='', verbose_name='URL неуспешной оплаты'),
+            field=models.URLField(default=settings.YANDEX_MONEY_FAIL_URL, verbose_name='URL неуспешной оплаты'),
         ),
         migrations.AlterField(
             model_name='payment',
@@ -35,12 +36,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='scid',
-            field=models.PositiveIntegerField(default='', verbose_name='Номер витрины'),
+            field=models.PositiveIntegerField(default=settings.YANDEX_MONEY_SCID, verbose_name='Номер витрины'),
         ),
         migrations.AlterField(
             model_name='payment',
             name='shop_id',
-            field=models.PositiveIntegerField(default='', verbose_name='ID магазина'),
+            field=models.PositiveIntegerField(default=settings.YANDEX_MONEY_SHOP_ID, verbose_name='ID магазина'),
         ),
         migrations.AlterField(
             model_name='payment',
@@ -50,6 +51,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='success_url',
-            field=models.URLField(default='', verbose_name='URL успешной оплаты'),
+            field=models.URLField(default=settings.YANDEX_MONEY_SUCCESS_URL, verbose_name='URL успешной оплаты'),
         ),
     ]
